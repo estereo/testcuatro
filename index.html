@@ -1,0 +1,64 @@
+---
+layout: default
+title: Tienda Epi
+---
+
+<div id="home">
+	<div id="carousel-example-generic" class="carousel slide container" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	  </ol>
+	  <div class="carousel-inner">
+	    <div class="item active">
+	      <img src="{{ site.baseurl }}/images/slide01.png" alt="Perro sacudiéndose el agua a cámara lenta">
+	      <div class="carousel-caption">
+  	        <h3>La hora del baño</h3>
+  			<p>Cómo hacer que tu perro disfrute y sea una taréa fácil</p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="{{ site.baseurl }}/images/slide02.png" alt="Cómodas camas para tu perro">
+	      <div class="carousel-caption">
+  	        <h3>Dormir como un rey</h3>
+  			<p>Encuentra la mejor cama para tu mejor amigo</p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="{{ site.baseurl }}/images/slide03.png" alt="Perro detrás de una valla">
+	      <div class="carousel-caption">
+	        <h3>Ansiedad por separación</h3>
+			<p>Te damos 5 consejos para dejar tu perro solo en casa</p>
+	      </div>
+	    </div>
+	  </div>
+	  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+	
+  
+  <section class="container">
+	  <h3>Lo más vendido esta semana:</h3>
+	  <div class="row">
+	 	 {% for post in site.posts %}
+   	  	<div class="col-sm-6 col-md-3">
+     	   <div class="thumbnail">
+       		<img data-src="holder.js/300x200" src="{{ site.baseurl }}{{ post.image }}">
+       	 	  <div class="caption">
+         		<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+        		<p>{{ post.price }}</p>
+        		<p><a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">Comprar</a></p>
+       	 	  </div>
+     	   </div>
+   	 	</div>
+	     {% endfor %}
+  	  </div>
+  </section>
+  
+</div>
